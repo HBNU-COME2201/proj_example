@@ -1,0 +1,12 @@
+type: derived
+name: summarize.legal
+base: summarize.base
+description: Legal-domain specialization
+variables:
+  length: { type: int, required: true, ge: 50, le: 300 }
+overrides:
+  sections:
+    system: "You are a precise legal summarizer. Cite statutes precisely."
+    constraints:
+      append:
+        - "Prefer IEEE-style citations if present."

@@ -13,27 +13,4 @@ pip install -e .[dev]
 # 테스트
 pytest -q
 
-# 예제 실행
-python examples/run_summarize.py
-```
-
-## 디렉토리 구조
-```bash
-polyprompt/
-  core.py           # Prompt/Section/SlotSchema (불변 객체, render/infer)
-  sections.py       # System/Instruction/Constraint/Example 섹션 (Composite)
-  strategies.py     # OpenAIInferencer(모의), JSONParser(예시)
-  registry.py       # PromptRegistry (name:version)
-  prompts.py        # 예시 Prompt 객체
-  prompt_manager.py # YAML 로더/상속 병합/컴파일 (Base/Derived)
-  schemas/
-    prompt_spec.py  # Base/Derived YAML 스키마(Pydantic)
-
-prompts/
-  summarize.base.yaml     # Base 예시
-  summarize.legal.yaml    # Derived 예시
-
-tests/
-  test_summarize.py
-  test_yaml_compile.py    # YAML 빌드 E2E 테스트 (권장)
 ```
