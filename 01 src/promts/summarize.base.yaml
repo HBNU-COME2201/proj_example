@@ -1,0 +1,15 @@
+type: base
+name: summarize.base
+description: Base summarization prompt
+variables:
+  text:   { type: string, required: true, min_length: 1 }
+  length: { type: int,    required: true, ge: 10, le: 500 }
+sections:
+  system: "You are a precise academic summarizer."
+  instruction: "Summarize the following text in {length} words:\n{text}"
+  constraints:
+    - "Be factual and concise."
+  examples:
+    - "Input: 'Deep learning emerged...'; Output: 'Succinct 60-word abstract...'"
+output:
+  format: free_text
